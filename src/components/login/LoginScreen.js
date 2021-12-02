@@ -15,8 +15,10 @@ export const LoginScreen = ({ history }) => {
 
     dispatch(action);
 
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
     // history.push('/'); //redirect to page
-    history.replace('/'); //drop last history
+    history.replace(lastPath); //drop last history
   }
 
   return (

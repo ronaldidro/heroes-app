@@ -5,8 +5,14 @@ import { HeroScreen } from '../components/heroes/HeroScreen'
 import { MarvelScreen } from '../components/marvel/MarvelScreen'
 import { SearchScreen } from '../components/search/SearchScreen'
 import { Navbar } from '../components/ui/NavBar'
+import { useLocation } from 'react-router-dom'
 
 export const DashboardRoutes = () => {
+
+  const { pathname, search } = useLocation();
+
+  localStorage.setItem('lastPath', pathname + search);
+
   return (
     <>
      <Navbar />
